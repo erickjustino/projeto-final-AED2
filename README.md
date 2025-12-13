@@ -1,19 +1,19 @@
 ![DCA](Imagens/img.jpg)
 
-# 🌐 Análise de Redes Complexas: A Teia da Wikipédia
+# Análise de Redes Complexas: A Teia da Wikipédia
 
-## 📺 Apresentação do Projeto
+## Apresentação do Projeto
 > **[INSIRA AQUI O LINK PARA O VÍDEO NO YOUTUBE/LOOM]**
 
 ---
 
-## 📝 Descrição do Projeto
+## Descrição do Projeto
 
 Este trabalho final da disciplina de **Estrutura de Dados II** tem como objetivo construir, visualizar e analisar uma rede complexa baseada em páginas da Wikipédia. Utilizando conceitos de Teoria dos Grafos, exploramos como tópicos aparentemente distintos se conectam através de hiperlinks.
 
 A rede foi gerada a partir da fusão de dados de **5 Seeds (Sementes)** de domínios variados, explorando conexões até o **Nível 2 (Altura < 3)**. Devido ao crescimento exponencial da rede nesta profundidade, foi implementada uma **heurística de otimização** para viabilizar a coleta de dados e manter a coesão temática.
 
-### 🌱 Seeds Utilizados
+### Seeds Utilizados
 1. **Transformer (Deep Learning)** - Tecnologia
 2. **The Beatles** - Música/Cultura Pop
 3. **Revolução Francesa** - História
@@ -22,7 +22,7 @@ A rede foi gerada a partir da fusão de dados de **5 Seeds (Sementes)** de domí
 
 ---
 
-## 🎯 Objetivos
+## Objetivos
 
 O projeto visa responder, visualmente e metricamente, às seguintes questões de análise de redes:
 
@@ -33,7 +33,7 @@ O projeto visa responder, visualmente e metricamente, às seguintes questões de
 
 ---
 
-## 🛠️ Metodologia e Solução com uma heurística e Estrutura de Dados
+## Metodologia e Solução com uma heurística e Estrutura de Dados
 
 A coleta de dados seguiu um pipeline rigoroso para garantir a relevância e viabilidade técnica, conforme exigido pelo **Requisito 4** do trabalho.
 
@@ -52,7 +52,7 @@ A abordagem tradicional de busca em largura (BFS) inviabilizaria a coleta até a
 
 ---
 
-## 📊 Resultados e Visualizações
+## Resultados e Visualizações
 
 ### 1. Métricas de Centralidade
 Nesta visualização, o tamanho dos nós é proporcional ao **Grau (Degree)** e as cores representam o ****.
@@ -74,7 +74,7 @@ Visualização da modularidade da rede. As cores indicam diferentes comunidades 
 
 ---
 
-## 🚀 Como Executar o Projeto
+## Como Executar o Projeto
 
 Para replicar a coleta e análise:
 
@@ -91,7 +91,7 @@ Para replicar a coleta e análise:
     * Execute todas as células na sequência para reproduzir os resultados.
 
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 * **Linguagem:** `Python 3`
 * **Bibliotecas Principais:**
