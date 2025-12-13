@@ -33,7 +33,7 @@ O projeto visa responder, visualmente e metricamente, às seguintes questões de
 
 ---
 
-## 🛠️ Metodologia e Solução da heurística e Estrutura de Dados
+## 🛠️ Metodologia e Solução com uma heurística e Estrutura de Dados
 
 A coleta de dados seguiu um pipeline rigoroso para garantir a relevância e viabilidade técnica, conforme exigido pelo **Requisito 4** do trabalho.
 
