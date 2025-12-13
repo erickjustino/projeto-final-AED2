@@ -92,14 +92,14 @@ Para replicar a coleta e análise:
 
 
 ## 🛠️ Tecnologias Utilizadas
+
 * **Linguagem:** `Python 3`
-
 * **Bibliotecas Principais:**
-*`Wikipedia`: Extração de dados.
-*`NetworkX`: Modelagem de grafos e algoritmos.
-*`Heapq`: Implementação de estruturas de dados eficientes.
+    * `Wikipedia`: Extração de dados.
+    * `NetworkX`: Modelagem de grafos e algoritmos.
+    * `Heapq`: Implementação de estruturas de dados eficientes.
+* **Software:**
+    * `Gephi`: Visualização e Análise.
 
-* **Software**
-*`Gephi`: Visualização e Análise.
 
 > Este projeto foi desenvolvido por Alice Maria Fonseca Victorino Freire e Erick Vinicius Justino da Silva para a disciplina de Algoritmos e Estrutura de Dados II (DCA/UFRN).
