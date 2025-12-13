@@ -29,7 +29,7 @@ O projeto visa responder, visualmente e metricamente, às seguintes questões de
 * **Centralidade:** Quais são as páginas mais influentes da rede? (Degree, Closeness ou Betweenness ou Eigenvector Centrality).
 * **Topologia:** Como a rede se estrutura em termos de camadas (K-Core e K-Shell)?
 * **Comunidades:** Existem grupos de páginas que formam "bolhas" de conteúdo distintas?
-* **Desafio Computacional:** Como coletar uma rede massiva (Nível 2) de forma eficiente utilizando uma estrutura de dados?
+* **Desafio Computacional:** Como coletar uma rede massiva (Nível 2) de forma eficiente utilizando uma estrutura de dados e uma heurística ?
 
 ---
 
