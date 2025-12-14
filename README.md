@@ -137,7 +137,6 @@ Após clonar o repositório, siga os passos abaixo:
 
 3.  **Execute a Coleta:**
     * No Jupyter, execute as células sequencialmente.
-    * **Atenção:** A célula de coleta (que contém o loop `while`) possui um sistema de checkpoint. Se a conexão cair ou você interromper a execução, o progresso será salvo automaticamente no arquivo `checkpoint_parcial.graphml` ou `grafo_resgate_emergencia.graphml`.
 
 4.  **Visualize os Resultados:**
     Ao final da execução do notebook, será gerado o arquivo `trabalho_final_validacao.graphml`. Abra este arquivo no software **Gephi** para aplicar as métricas visuais e colorações finais.
