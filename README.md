@@ -57,7 +57,7 @@ A abordagem tradicional de busca em largura (BFS) inviabilizaria a coleta até a
 ### 1. Métricas de Centralidade
 Nesta visualização, o tamanho dos nós é proporcional ao **Grau (Degree)** e as cores representam o ****.
 
-![Grafo Centralidade](caminho/para/imagem_requisito1.png)
+![Grafo Centralidade](imagens/betweeness_centrality.png)
 > *[Adicione aqui sua análise: Ex: Os nós centrais atuam como pontes entre os clusters de História e Geografia...]*
 
 ### 2. Decomposição K-Core e K-Shell
@@ -74,7 +74,7 @@ Visualização da modularidade da rede. As cores indicam diferentes comunidades 
 
 ---
 
-## Como Executar o Projeto
+## Como Executar o Projeto no Google Colab
 
 Para replicar a coleta e análise:
 
@@ -85,11 +85,41 @@ Para replicar a coleta e análise:
     ```
 
 2.  **Abra o Notebook:**
-    * Faça o upload do arquivo `.ipynb` para o [Google Colab](https://colab.research.google.com/).
+    * Faça o upload do arquivo `.ipynb` para o [Google Colab](https://colab.research.google.com/). Nota: é necessário instalar as dependências (NetworkX, Wikipedia, etc.) no ambiente do Colab.
 
 3.  **Execute as Células:**
     * Execute todas as células na sequência para reproduzir os resultados.
 
+## Como Executar o Projeto Localmente
+
+Este projeto utiliza **Poetry** para gerenciamento de dependências e um **Jupyter Notebook** para execução do código e visualização dos dados.
+
+### Pré-requisitos
+* Python instalado (versão compatível com o definido no `pyproject.toml`).
+* [Poetry](https://python-poetry.org/docs/) instalado.
+
+### Passo a Passo
+
+Após clonar o repositório, siga os passos abaixo:
+1.  **Instale as dependências:**
+    Na raiz do projeto, execute o comando abaixo para criar o ambiente virtual e instalar as bibliotecas (NetworkX, Wikipedia, Jupyter, etc.):
+    ```bash
+    poetry install
+    ```
+
+2.  **Abra o Notebook:**
+    Para iniciar o servidor do Jupyter e abrir o arquivo `.ipynb`:
+    ```bash
+    poetry run jupyter notebook
+    ```
+    Isso abrirá uma aba no seu navegador. Clique no arquivo **`main.ipynb`** para iniciar.
+
+3.  **Execute a Coleta:**
+    * No Jupyter, execute as células sequencialmente.
+    * **Atenção:** A célula de coleta (que contém o loop `while`) possui um sistema de checkpoint. Se a conexão cair ou você interromper a execução, o progresso será salvo automaticamente no arquivo `checkpoint_parcial.graphml` ou `grafo_resgate_emergencia.graphml`.
+
+4.  **Visualize os Resultados:**
+    Ao final da execução do notebook, será gerado o arquivo `trabalho_final_validacao.graphml`. Abra este arquivo no software **Gephi** para aplicar as métricas visuais e colorações finais.
 
 ## Tecnologias Utilizadas
 
