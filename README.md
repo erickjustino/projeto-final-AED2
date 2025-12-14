@@ -55,22 +55,43 @@ A abordagem tradicional de busca em largura (BFS) inviabilizaria a coleta até a
 ## Resultados e Visualizações
 
 ### 1. Métricas de Centralidade
-Nesta visualização, o tamanho dos nós é proporcional ao **Grau (Degree)** e as cores representam o ****.
+Nesta visualização, o tamanho dos nós é proporcional ao **Grau (Degree)**, indicando a quantidade de conexões diretas; as cores representam o **Betweenness Centrality** (Intermediação).
 
 ![Grafo Centralidade](imagens/betweeness_centrality.png)
-> *[Adicione aqui sua análise: Ex: Os nós centrais atuam como pontes entre os clusters de História e Geografia...]*
+
+* **Hubs Locais (Nós Grandes e Azuis):** Vértices como **"Rio Grande do Norte"** e **"The Beatles"** possuem alto *Degree* (são muito grandes), mas baixo *Betweenness* (são azuis). Isso indica que são hubs de comunidades fechadas: eles conectam muitos artigos dentro do seu próprio tema, mas não servem como caminho para outros assuntos.
+* **Pontes Globais (Nós Vermelhos/Laranjas):** O nó **"Media franchise"** e **"One Piece"** aparecem com cores quentes. O destaque para "Media franchise" sugere que ele atua como uma ponte semântica, conectando o cluster de anime/mangá (One Piece) a outros conceitos de entretenimento na rede, sendo vital para o fluxo de informação entre clusters distintos.
 
 ### 2. Decomposição K-Core e K-Shell
-Análise da estrutura topológica da rede, destacando o núcleo mais conectado (Core) versus a periferia (Shell).
+Para entender a hierarquia da rede, aplicamos a decomposição K-Core. Esta análise filtra a rede em "camadas", onde o **K-Core** (vermelho) representa o núcleo máximo de densidade e o **K-Shell** (verde-azulado) representa camadas periféricas de alta conexão.
 
-![Grafo K-Core](caminho/para/imagem_requisito2.png)
-> *[Adicione aqui sua análise: Ex: O núcleo duro da rede (K-Core máximo) é composto principalmente por páginas sobre...]*
+![Grafo K-Core Geral](imagens/kcorekshell.png)
 
-### 3. Detecção de Comunidades
-Visualização da modularidade da rede. As cores indicam diferentes comunidades (clusters) detectadas pelo algoritmo.
+* **O Núcleo Duro (26-Core):** O núcleo máximo da rede (em vermelho) é composto inteiramente pelo cluster de **"One Piece"**. Isso revela que os artigos sobre animes/mangás na Wikipédia tendem a ser extremamente interconectados (personagens linkam episódios, que linkam jogos, etc.), formando a clique mais densa da coleta.
+* **A Periferia Densa (20-Shell):** Embora não façam parte do núcleo máximo, os clusters de **"The Beatles"** e **"Indonésia"** sobreviveram até camadas profundas (Shell 20), indicando que também possuem alta coesão interna.
 
-![Grafo Comunidades](caminho/para/imagem_requisito3.png)
-> *[Adicione aqui sua análise: Ex: Foram identificadas 5 grandes comunidades bem definidas, correspondendo aos temas dos Seeds iniciais...]*
+#### Detalhes dos Shells (Zooms)
+
+Para melhor visualizar a densidade local, destacamos dois grupos que formam o **20-Shell**:
+
+| Cluster: The Beatles (20-Shell) | Cluster: Indonésia (20-Shell) |
+| :---: | :---: |
+| ![Zoom Beatles](imagens/beatles.png) | ![Zoom Indonesia](imagens/indonesia.png) |
+| *Alta interconexão entre álbuns, músicas e biografia dos integrantes.* | *Clique denso focado em cultura, arquitetura ("Candi") e sociedade indonésia.* |
+
+### 3. Detecção de Comunidades (Modularidade)
+O algoritmo de Modularidade identificou grupos temáticos distintos, representados pelas cores. Mesmo em uma rede densa, é possível ver a separação clara dos assuntos das Seeds.
+
+![Grafo Comunidades](imagens/comunidade.svg)
+
+* **Verde:** Corresponde ao ecossistema dos Beatles. É uma comunidade bem isolada, conectando-se pouco com os outros clusters de cultura pop. Exemplos: The Beatles, John Lennon
+* **Rosa:** O cluster de One Piece e animes. Exemplos: One Piece, personagens de One Piece
+* **Roxo:** O cluster de Rio Grande do Norte e história do Brasil, se conectando também com o cluster azul e o cinza, que são ligados a assuntos históricos. Exemplos: Rio Grande do Norte, Coronelismo
+* **Laranja e Marrom Claro:** Tópicos mistos de cultura pop. Exemplos: Ariana Grande, BBC One
+* **Marrom Escuro:** Tópicos conectados com anime e cultura pop. Exemplos: Anime, DC Comics
+* **Ciano:** Cluster ligado à França e à mídia francesa. Exemplos: França, Euronews
+* **Azul:** Ligado à Revolução Francesa e história mundial. Exemplos: Revolução Francesa, Indonesia
+* **Cinza:** Ligado a história e geografia mais relacionadas às américas. Exemplos: Capitania de São Vicente, Guerra Civil Americana, etc.  
 
 ---
 
