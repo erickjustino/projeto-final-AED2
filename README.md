@@ -57,7 +57,7 @@ A abordagem tradicional de busca em largura (BFS) inviabilizaria a coleta até a
 ### 1. Métricas de Centralidade
 Nesta visualização, o tamanho dos nós é proporcional ao **Grau (Degree)**, indicando a quantidade de conexões diretas; as cores representam o **Betweenness Centrality** (Intermediação).
 
-![Grafo Centralidade](imagens/betweeness_centrality.png)
+![Grafo Centralidade](Imagens/betweeness_centrality.png)
 
 * **Hubs Locais (Nós Grandes e Azuis):** Vértices como **"Rio Grande do Norte"** e **"The Beatles"** possuem alto *Degree* (são muito grandes), mas baixo *Betweenness* (são azuis). Isso indica que são hubs de comunidades fechadas: eles conectam muitos artigos dentro do seu próprio tema, mas não servem como caminho para outros assuntos.
 * **Pontes Globais (Nós Vermelhos/Laranjas):** O nó **"Media franchise"** e **"One Piece"** aparecem com cores quentes. O destaque para "Media franchise" sugere que ele atua como uma ponte semântica, conectando o cluster de anime/mangá (One Piece) a outros conceitos de entretenimento na rede, sendo vital para o fluxo de informação entre clusters distintos.
@@ -65,7 +65,7 @@ Nesta visualização, o tamanho dos nós é proporcional ao **Grau (Degree)**, i
 ### 2. Decomposição K-Core e K-Shell
 Para entender a hierarquia da rede, aplicamos a decomposição K-Core. Esta análise filtra a rede em "camadas", onde o **K-Core** (vermelho) representa o núcleo máximo de densidade e o **K-Shell** (verde-azulado) representa camadas periféricas de alta conexão.
 
-![Grafo K-Core Geral](imagens/kcorekshell.png)
+![Grafo K-Core Geral](Imagens/kcorekshell.png)
 
 * **O Núcleo Duro (26-Core):** O núcleo máximo da rede (em vermelho) é composto inteiramente pelo cluster de **"One Piece"**. Isso revela que os artigos sobre animes/mangás na Wikipédia tendem a ser extremamente interconectados (personagens linkam episódios, que linkam jogos, etc.), formando a clique mais densa da coleta.
 * **A Periferia Densa (20-Shell):** Embora não façam parte do núcleo máximo, os clusters de **"The Beatles"** e **"Indonésia"** sobreviveram até camadas profundas (Shell 20), indicando que também possuem alta coesão interna.
@@ -76,13 +76,13 @@ Para melhor visualizar a densidade local, destacamos dois grupos que formam o **
 
 | Cluster: The Beatles (20-Shell) | Cluster: Indonésia (20-Shell) |
 | :---: | :---: |
-| ![Zoom Beatles](imagens/beatles.png) | ![Zoom Indonesia](imagens/indonesia.png) |
+| ![Zoom Beatles](Imagens/beatles.png) | ![Zoom Indonesia](Imagens/indonesia.png)
 | *Alta interconexão entre álbuns, músicas e biografia dos integrantes.* | *Clique denso focado em cultura, arquitetura ("Candi") e sociedade indonésia.* |
 
 ### 3. Detecção de Comunidades (Modularidade)
 O algoritmo de Modularidade identificou grupos temáticos distintos, representados pelas cores. Mesmo em uma rede densa, é possível ver a separação clara dos assuntos das Seeds.
 
-![Grafo Comunidades](imagens/comunidade.svg)
+![Grafo Comunidades](Imagens/comunidade.svg)
 
 * **Verde:** Corresponde ao ecossistema dos Beatles. É uma comunidade bem isolada, conectando-se pouco com os outros clusters de cultura pop. Exemplos: The Beatles, John Lennon
 * **Rosa:** O cluster de One Piece e animes. Exemplos: One Piece, personagens de One Piece
