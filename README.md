@@ -34,22 +34,22 @@ O projeto visa responder, visualmente e metricamente, às seguintes questões de
 ---
 
 ## Metodologia e Solução com uma heurística e Estrutura de Dados
-
 A coleta de dados seguiu um pipeline rigoroso para garantir a relevância e viabilidade técnica, conforme exigido pelo **Requisito 4** do trabalho.
 
-### 1. Coleta Inteligente (Heurística e Priority Queue)
-A abordagem tradicional de busca em largura (BFS) inviabilizaria a coleta até a altura < 3 devido à explosão combinatória de links. Para resolver isso, implementamos uma **Busca Baseada em Heurística**:
+### 1. Coleta Inteligente (Beam Search e Poda)
+A abordagem tradicional de busca em largura (BFS) inviabilizaria a coleta até o **nível 2 (altura < 3)** devido à explosão combinatória de links. Para resolver isso e tornar a coleta possível, implementamos uma estratégia de **Busca em Feixe (*Beam Search*)**:
 
-* **Estrutura de Dados:** Substituímos a fila comum por uma **Fila de Prioridade (Min-Heap)** usando a biblioteca `heapq`.
-* **Heurística de Score:** Cada link recebe uma pontuação inicial que é ajustada dinamicamente:
-    * **Bonificação (-50 pts):** Links que contêm palavras-chave dos Seeds (ex: "Brasil", "Revolução", "Beatles") ganham alta prioridade (furam a fila).
-    * **Penalidade (+20 pts):** Títulos excessivamente longos (>40 caracteres) ou irrelevantes recebem baixa prioridade.
-* **Resultado:** O algoritmo prioriza a expansão de nós semanticamente relevantes, garantindo uma base de dados rica mesmo sob limitações computacionais.
+* **Estrutura de Dados:** Substituímos a fila comum por uma **Fila de Prioridade (Min-Heap)** usando a biblioteca `heapq`, permitindo o acesso imediato aos nós mais promissórios.
+* **Heurística de Score:** Cada link recebe uma pontuação de relevância:
+    * **Bonificação (-50 pts):** Links que contêm palavras-chave dos Seeds (ex: "Brasil", "Revolução", "Beatles") ganham prioridade máxima.
+    * **Penalidade (+50 pts):** Títulos excessivamente longos (>50 caracteres) ou listas ("Lista de...") são penalizados.
+* **Técnica de Poda (*Pruning*):**
+    Para garantir a performance, aplicamos um limite rígido de **Top-15 Melhores Filhos** por página. O algoritmo avalia todos os links de uma página, mas adiciona à fila apenas os 15 com melhor pontuação (menor score).
+* **Resultado:** Essa abordagem transformou o crescimento exponencial da rede em um crescimento linear controlado, gerando uma base de dados densa e semanticamente focada em poucos minutos.
 
 ### 2. Tratamento dos Dados
 * **Limpeza:** Remoção de *Self-Loops* e fusão de nós duplicados (ex: Plurais e variações com hífen).
-* **Filtragem (Core):** Aplicação de um filtro para manter apenas nós com **Grau ≥ 2**, eliminando páginas isoladas e reduzindo o ruído visual.
-
+* **Filtragem (Core):** Aplicação de um filtro para manter apenas nós com **Grau ≥ 2**, eliminando páginas isoladas e reduzindo o ruído visual para a análise no Gephi.
 ---
 
 ## Resultados e Visualizações
