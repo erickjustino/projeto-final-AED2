@@ -69,13 +69,13 @@ A escala de cores utilizada varia do azul (menor valor) ao vermelho (maior valor
 ### 2. Decomposição K-Core e K-Shell
 Para entender a hierarquia da rede, aplicamos a decomposição K-Core. Esta análise filtra a rede em "camadas", onde o **K-Core** (roxo mais escuro) representa o núcleo máximo de densidade e o **K-Shell** representa camadas periféricas de alta conexão.
 
-![Grafo K-Core](Imagens/req2.png)
+![Grafo K-Core](imagens/req2.png)
 
 O k-core máximo encontrado foi **k=22**, então foram definidas 5 camadas de k-shells para enriquecer a visualização, começando do tom de rosa mais claro (k=18) até o roxo mais escuro (k=22).
 
 O conteúdo do k-core inclui páginas referentes à constituição francesa, que são fortemente interconectadas, como pode ser visto a seguir.
 
-![K-Core Máximo](Imagens/req2_kcore.png)
+![K-Core Máximo](imagens/req2_kcore.png)
 
 ### 3. Detecção de Comunidades (Modularidade)
 O algoritmo de Modularidade identificou grupos temáticos distintos, representados por 8 cores. Mesmo em uma rede densa, é possível ver a separação clara dos assuntos das Seeds.
