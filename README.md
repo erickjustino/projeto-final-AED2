@@ -39,6 +39,7 @@ A coleta de dados seguiu um pipeline rigoroso para garantir a relevância e viab
 ### 1. Coleta Inteligente (Beam Search e Poda)
 A abordagem tradicional de busca em largura (BFS) inviabilizaria a coleta até o **nível 2 (altura < 3)** devido à explosão combinatória de links. Para resolver isso e tornar a coleta possível, implementamos uma estratégia de **Busca em Feixe (*Beam Search*)**:
 
+* **Extração de Radicais (Stemming):** O algoritmo "limpa" os Seeds e reduz palavras longas aos seus radicais (ex: "Transformer" torna-se "trans"). Isso permite capturar variações (como "Transformação" ou "Transformers"), recuperando o volume de conexões sem perder o contexto.
 * **Estrutura de Dados:** Substituímos a fila comum por uma **Fila de Prioridade (Min-Heap)** usando a biblioteca `heapq`, permitindo o acesso imediato aos nós mais promissórios.
 * **Heurística de Score:** Cada link recebe uma pontuação de relevância:
     * **Bonificação (-50 pts):** Links que contêm palavras-chave dos Seeds (ex: "Brasil", "Revolução", "Beatles") ganham prioridade máxima.
@@ -87,7 +88,6 @@ O algoritmo de Modularidade identificou grupos temáticos distintos, representad
 - Vermelho: Páginas sobre história do Brasil, capitanias e brasões.
 - Ciano: Relacionado à cidade de Campina Grande.
 - Verde-água: Cluster relacionado à Revolução Francesa e história europeia e francesa.
-- Amarelo: Módulo extremamente difuso, parece ser ligado a história geral e Américas.
 - Rosa: Cluster ligado a One Piece, entretenimento e cultura japonesa.
 - Verde: Relacionado a música, bandas e cultura pop, como Beatles e Ariana Grande.
 - Azul: Cluster relacionado a tecnologia, aprendizado de máquina e inteligência artificial.
