@@ -1,4 +1,4 @@
-![DCA](Imagens/img.jpg)
+![DCA](imagens/img.jpg)
 
 # Análise de Redes Complexas: A Teia da Wikipédia
 
@@ -44,7 +44,7 @@ A abordagem tradicional de busca em largura (BFS) inviabilizaria a coleta até o
     * **Bonificação (-50 pts):** Links que contêm palavras-chave dos Seeds (ex: "Brasil", "Revolução", "Beatles") ganham prioridade máxima.
     * **Penalidade (+50 pts):** Títulos excessivamente longos (>50 caracteres) ou listas ("Lista de...") são penalizados.
 * **Técnica de Poda (*Pruning*):**
-    Para garantir a performance, aplicamos um limite rígido de **Top-15 Melhores Filhos** por página. O algoritmo avalia todos os links de uma página, mas adiciona à fila apenas os 15 com melhor pontuação (menor score).
+    Para garantir a performance, aplicamos um limite rígido de **Top-20 Melhores Filhos** por página. O algoritmo avalia todos os links de uma página, mas adiciona à fila apenas os 20 com melhor pontuação (menor score).
 * **Resultado:** Essa abordagem transformou o crescimento exponencial da rede em um crescimento linear controlado, gerando uma base de dados densa e semanticamente focada em poucos minutos.
 
 ### 2. Tratamento dos Dados
