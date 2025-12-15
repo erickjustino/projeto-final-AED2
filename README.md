@@ -55,22 +55,42 @@ A abordagem tradicional de busca em largura (BFS) inviabilizaria a coleta até o
 ## Resultados e Visualizações
 
 ### 1. Métricas de Centralidade
-Nesta visualização, o tamanho dos nós é proporcional ao **Grau (Degree)**, indicando a quantidade de conexões diretas; as cores representam o **Betweenness Centrality** (Intermediação).
+Nesta visualização, o tamanho dos nós é proporcional ao **Grau (Degree)**, indicando a quantidade de conexões diretas; as cores escolhidas foram relacionadas com o o **Betweenness Centrality**.
 
-![Grafo Centralidade](Imagens/betweeness_centrality.png)
+A escala de cores utilizada varia do azul (menor valor) ao vermelho (maior valor), destacando com tons mais quentes os nós que atuam como pontes cruciais na rede.
+
+![Legenda do Grafo](imagens/req1_legenda.png)
+![Grafo de Betweenness Centrality](imagens/req1.png)
+
+* O nó com maior valor de betweenness é a página **Rio Grande do Norte**, que também é uma das seeds.
+* Outros nós importantes são: Brasil, Ariana Grande, Revolução Francesa, Língua Japonesa, Aprendizado de Máquina
+
 
 ### 2. Decomposição K-Core e K-Shell
-Para entender a hierarquia da rede, aplicamos a decomposição K-Core. Esta análise filtra a rede em "camadas", onde o **K-Core** (vermelho) representa o núcleo máximo de densidade e o **K-Shell** (verde-azulado) representa camadas periféricas de alta conexão.
+Para entender a hierarquia da rede, aplicamos a decomposição K-Core. Esta análise filtra a rede em "camadas", onde o **K-Core** (roxo mais escuro) representa o núcleo máximo de densidade e o **K-Shell** representa camadas periféricas de alta conexão.
 
-![Grafo K-Core](Imagens/kcorekshell.png)
+![Grafo K-Core](Imagens/req2.png)
+
+O k-core máximo encontrado foi **k=22**, então foram definidas 5 camadas de k-shells para enriquecer a visualização, começando do tom de rosa mais claro (k=18) até o roxo mais escuro (k=22).
+
+O conteúdo do k-core inclui páginas referentes à constituição francesa, que são fortemente interconectadas, como pode ser visto a seguir.
+
+![K-Core Máximo](Imagens/req2_kcore.png)
 
 ### 3. Detecção de Comunidades (Modularidade)
-O algoritmo de Modularidade identificou grupos temáticos distintos, representados pelas cores. Mesmo em uma rede densa, é possível ver a separação clara dos assuntos das Seeds.
+O algoritmo de Modularidade identificou grupos temáticos distintos, representados por 8 cores. Mesmo em uma rede densa, é possível ver a separação clara dos assuntos das Seeds.
 
-![Grafo Comunidades](Imagens/req3.svg)
+![Grafo Comunidades](imagens/req3.svg)
 
-
-
+- Laranja: Cluster com páginas relacionadas ao Rio de Janeiro.
+- Amarelo: Relacionados a rios, hidrografia.
+- Vermelho: Páginas sobre história do Brasil, capitanias e brasões.
+- Ciano: Relacionado à cidade de Campina Grande.
+- Verde-água: Cluster relacionado à Revolução Francesa e história europeia e francesa.
+- Amarelo: Módulo extremamente difuso, parece ser ligado a história geral e Américas.
+- Rosa: Cluster ligado a One Piece, entretenimento e cultura japonesa.
+- Verde: Relacionado a música, bandas e cultura pop, como Beatles e Ariana Grande.
+- Azul: Cluster relacionado a tecnologia, aprendizado de máquina e inteligência artificial.
 ---
 
 ## Como Executar o Projeto no Google Colab
