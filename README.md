@@ -14,7 +14,7 @@ Este trabalho final da disciplina de **Estrutura de Dados II** tem como objetivo
 A rede foi gerada a partir da fusão de dados de **5 Seeds (Sementes)** de domínios variados, explorando conexões até o **Nível 2 (Altura < 3)**. Devido ao crescimento exponencial da rede nesta profundidade, foi implementada uma **heurística de otimização** para viabilizar a coleta de dados e manter a coesão temática.
 
 ### Seeds Utilizados
-1. **Transformer (Deep Learning)** - Tecnologia
+1. **Aprendizado de máquina** - Tecnologia
 2. **The Beatles** - Música/Cultura Pop
 3. **Revolução Francesa** - História
 4. **One Piece** - Entretenimento
@@ -42,7 +42,7 @@ A abordagem tradicional de busca em largura (BFS) inviabilizaria a coleta até o
 * **Estrutura de Dados:** Substituímos a fila comum por uma **Fila de Prioridade (Min-Heap)** usando a biblioteca `heapq`, permitindo o acesso imediato aos nós mais promissórios.
 * **Heurística de Score:** Cada link recebe uma pontuação de relevância:
     * **Bonificação (-50 pts):** Links que contêm palavras-chave dos Seeds (ex: "Brasil", "Revolução", "Beatles") ganham prioridade máxima.
-    * **Penalidade (+50 pts):** Títulos excessivamente longos (>50 caracteres) ou listas ("Lista de...") são penalizados.
+    * **Penalidade (+50 pts):** Títulos excessivamente longos (>60 caracteres) ou listas ("Lista de...") são penalizados.
 * **Técnica de Poda (*Pruning*):**
     Para garantir a performance, aplicamos um limite rígido de **Top-20 Melhores Filhos** por página. O algoritmo avalia todos os links de uma página, mas adiciona à fila apenas os 20 com melhor pontuação (menor score).
 * **Resultado:** Essa abordagem transformou o crescimento exponencial da rede em um crescimento linear controlado, gerando uma base de dados densa e semanticamente focada em poucos minutos.
