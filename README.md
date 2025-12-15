@@ -3,7 +3,7 @@
 # Análise de Redes Complexas: A Teia da Wikipédia
 
 ## Apresentação do Projeto
-> **https://youtu.be/y0j3J7N2h90**
+> **https://youtu.be/mYwCaPWJ1lE**
 
 ---
 
